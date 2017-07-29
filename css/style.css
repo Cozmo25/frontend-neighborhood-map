@@ -1,0 +1,147 @@
+* {box-sizing:border-box;}
+
+html, body {
+background-color: #FFF;
+font-family: Arial, sans-serif;
+height: 100%;
+margin: 0;
+padding: 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+
+.main {
+  display: flex;
+}
+
+.container {
+  display: block;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* space elements horizontally */
+  align-items: center; /* align vertically */
+  background-color: black;
+  min-height: 50px;
+}
+
+.page-title {
+  color: #fff;
+  margin-right: 5px;
+}
+
+.slide {
+  transform: translateX(0) !important;
+}
+
+.container {
+    position: relative;
+    right: 5px;
+    display: none;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+    will-change: transform;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+.place-filter {
+  position: relative;
+  left: 5px;
+}
+
+#map {
+  position: absolute;
+  left: 300px;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
+  will-change: transform;
+}
+
+.left-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 50px;
+  width: 300px;
+  background-color: black;
+  color: white;
+  overflow: scroll;
+  will-change: transform;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+#iw-container  .iw-title {
+   font-family: 'Open Sans Condensed', sans-serif;
+   font-size: 14px;
+   padding: 10px;
+   text-align: left;
+   font-weight: 400;
+   background-color: #48b5e9;
+   color: white;
+   margin: 1px;
+   border-radius: 2px 2px 0 0; /* In accordance with the rounding of the default infowindow corners. */
+}
+
+.gm-style-iw {
+   width: 350px !important;
+}
+
+.show-hide-list {
+  top: 20px;
+  left: 200px;
+}
+
+@media screen and (max-width: 1000px) {
+
+  .left-bar {
+    transform: translateX(-300px);
+  }
+
+  #map {
+    left: 0;
+    width: 100vw;
+  }
+
+  .container {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 319px) {
+  .place-filter {
+    display: none;
+  }
+
